@@ -1,0 +1,97 @@
+<!-- <!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <title>{{ config('app.name', 'Laravel') }}</title> -->
+ 
+        <!-- Fonts -->
+        <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"> -->
+
+        <!-- Styles -->
+        <!-- <link rel="stylesheet" href="{{ mix('css/app.css') }}"> -->
+
+<!--         @livewireStyles
+ -->
+        <!-- Scripts -->
+      <!--   <script src="{{ mix('js/app.js') }}" defer></script>
+    </head>
+    <body class="font-sans antialiased">
+        <x-jet-banner />
+
+        <div class="min-h-screen bg-gray-100">
+            @livewire('navigation-menu') -->
+
+            <!-- Page Heading -->
+          <!--   @if (isset($header))
+                <header class="bg-white shadow">
+                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                        {{ $header }}
+                    </div>
+                </header>
+            @endif -->
+
+            <!-- Page Content -->
+            <!-- <main>
+                {{ $slot }}
+            </main>
+        </div>
+
+        @stack('modals')
+
+        @livewireScripts
+    </body>
+</html>
+-->
+
+
+<x-guest-layout>
+    <main id="main" class="main-site left-sidebar">
+
+        <div class="container">
+
+            <div class="wrap-breadcrumb">
+                <ul>
+                    <li class="item-link"><a href="/" class="link">home</a></li>
+                    <li class="item-link"><span>login</span></li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12 col-md-offset-3">
+                    <div class=" main-content-area">
+                        <div class="wrap-login-item ">                      
+                            <div class="login-form form-item form-stl">
+                                <form name="frm-login" method="POST" action="{{route('login')}}">
+                                    @csrf
+                                    <fieldset class="wrap-title">
+                                        <h3 class="form-title">Log in to your account</h3>                                      
+                                    </fieldset>
+                                    <fieldset class="wrap-input">
+                                        <label for="frm-login-uname">Email Address:</label>
+                                        <input type="email" id="frm-login-uname" name="email" placeholder="Type your email address" :value="old('email')"required autofocus>
+                                    </fieldset>
+                                    <fieldset class="wrap-input">
+                                        <label for="frm-login-pass">Password:</label>
+                                        <input type="password" id="frm-login-pass" name="password" placeholder="************" required autocomplete="current-password ">
+                                    </fieldset>
+                                    
+                                    <fieldset class="wrap-input">
+                                        <label class="remember-field">
+                                            <input class="frm-input " name="remember" id="rememberme" value="forever" type="checkbox"><span>Remember me</span>
+                                        </label>
+                                        <a class="link-function left-position" href="{{route('password.request')}}" title="Forgotten password?">Forgotten password?</a>
+                                    </fieldset>
+                                    <input type="submit" class="btn btn-submit" value="Login" name="submit">
+                                </form>
+                            </div>                                              
+                        </div>
+                    </div><!--end main products area-->     
+                </div>
+            </div><!--end row-->
+
+        </div><!--end container-->
+
+    </main>
+</x-guest-layout>
